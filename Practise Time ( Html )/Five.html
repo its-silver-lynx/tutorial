@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let fruits=["mango","apple","banana","grapes","strawberry"];
+      // let names=["neha","bittu","lucky","kousar","khattu","rehman","kousar"];
+      // console.log(fruits.concat(names));
+      // let animals=["cat",["dog","monkey","donkey"],["horse","cow"]];
+      // console.log(animals)
+      // console.log(animals.flat());
+      // console.log(fruits+names);
+      // console.log(fruits.join(names));
+      // console.log(names.includes("rehman"));
+      // let num=[1,3,4,5,7,8,9];
+      // console.log(num.includes(10));
+      //in array,array concatenation does not return new array
+      // console.log(names.length);
+      // console.log(names.indexOf("kousar"));
+      // console.log(names.lastIndexOf("kousar"));
+
+      // let x = names.shift()   // removes and stores the first element
+      // names.push(x)           // pushes it to the end
+      // console.log(names)      // final array
+
+      //********************Feature of Ecma Script (es6) SpreadOperator********************//
+
+      // let me = "priya";               //Adding priya to array -> spread operator present in js only
+      // console.log(...names,me)        //it does not create a new array ,it will modifies the same array
+
+      // console.log(names.slice(0,3))   //['neha', 'bittu', 'lucky']
+      // console.log(names.slice(3))     //['kousar', 'khattu', 'rehman', 'kousar']
+      // console.log(names.slice(3,names.length))//['kousar', 'khattu', 'rehman', 'kousar']
+      // console.log(names)              //['neha', 'bittu', 'lucky', 'kousar', 'khattu', 'rehman', 'kousar']
+      // console.log(names.toString())//neha,bittu,lucky,kousar,khattu,rehman,kousar
+
+      //Divide by 2 add names ,total length divide by 2 parts add your name,
+      //and reverse it, then last element u have to make it apital
+      let movie = ["KGF", "KGF2", "KANTARA", "KANTARA2", "DDLJ", "PUSHPA"];
+      let names = ["priya", "riya", "aiysha", "anshu", "aiyshu", "priyanshu"];
+
+      // Step 1: Divide movie into 2 parts
+      let part1 = movie.slice(0, movie.length / 2); // ["KGF", "KGF2", "KANTARA"]
+    //   console.log(part1)
+      let part2 = movie.slice(movie.length / 2); // ["KANTARA2", "DDLJ", "PUSHPA"]
+    //   console.log(part2)
+
+      // Step 2: Add names
+      let combined = movie.concat(names); // or simply movie.concat(names)
+    //   console.log(combined)
+
+      // Step 3: Total length
+      let totalLength = combined.length; // 12
+    //   console.log(totalLength)
+
+      // Step 4: Divide into 2 parts
+      let firsthalf = combined.slice(0,combined.length/2)
+      let secondhalf = combined.slice(combined.length/2)
+    //   console.log(firsthalf)
+    //   console.log(secondhalf)
+
+      // Step 5: Add your name to both halves
+      firsthalf.push("Krish");
+      secondhalf.push("Meow");
+    //   console.log(firsthalf)
+    //   console.log(secondhalf)
+
+      // Step 6: Combine and reverse
+      let finalArray = firsthalf.concat(secondhalf)
+    //   console.log(finalArray)    
+    //   console.log(finalArray.reverse())
+
+      // Step 7: Make last element capital
+      let lastelement = finalArray.slice(finalArray.length-1)
+      console.log(lastelement)
+      
+    </script>
+  </body>
+</html>

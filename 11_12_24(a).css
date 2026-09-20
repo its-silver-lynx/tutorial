@@ -1,0 +1,24 @@
+body{
+    background-color: bisque;
+}
+h1{
+    color: red;
+}
+h2{
+    color: orangered;
+}
+h3{
+    color: orange;
+}
+#para1{
+    background-color: cornsilk;
+    color: brown;
+}
+#para2{
+    background-color: rgb(255, 248, 220);
+    color: brown;
+}
+#para3{
+    background-color: cornsilk;
+    color: brown;
+}

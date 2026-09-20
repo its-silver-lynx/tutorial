@@ -1,0 +1,55 @@
+h2{
+    text-align: center;
+    color: red;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+h4{
+    /* text-align: end; */
+    text-align: left ;
+    color: rgb(255, 102, 0);
+    font-size: 20px;
+    text-transform: capitalize;
+}
+h3{
+    /* text-align: end; */
+    text-align: left ;
+    color: rgba(101, 13, 23, 0.916);
+    font-size: 20px;
+    text-transform: capitalize;
+}
+input{
+    /* text-align: center; */
+    color: darkorange;
+    text-transform: capitalize;
+}
+#para1{
+    text-align: justify;
+    color: gray;
+    /* text-transform: capitalize; */
+    /* text-transform: uppercase; */
+    text-transform: lowercase;
+}
+#para2{
+    text-align: justify;
+    color: rgb(80, 80, 80);
+    /* text-transform: capitalize; */
+    /* text-transform: uppercase; */
+    text-transform: capitalize;
+}
+#para3{
+    text-align: justify;
+    color: rgb(27, 27, 27);
+    /* text-transform: capitalize; */
+    /* text-transform: uppercase; */
+    text-transform: uppercase;
+}
+li{
+    color: rgb(223, 120, 18);
+    text-transform: capitalize;
+}
+h4#teachers{
+    color: rgb(223, 35, 18);
+    text-transform: capitalize;
+    text-decoration: underline;
+}

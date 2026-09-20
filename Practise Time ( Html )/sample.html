@@ -1,0 +1,570 @@
+<!-- 
+    DOM - Document Object Model
+
+    ---types of function
+    without parameter fn
+    with parameters fn
+    local variable fn
+    global variable
+    passing the value in the calling fn names
+    return fn
+    arrow fn
+    retrurnig in arrow fn 
+    nested fn(call back hell)
+
+    ---pros
+    fn reuseability
+    fn -> it contains block of code
+    reduces lines of code
+
+    arrow fn is used to create the instance of object using this keyword
+
+    map is used to retrieve the 
+    map() doe not return any array
+    filter returns array
+
+    set time out -> "program is executed only once" at only given time interval
+-->
+<!--
+    *** d/f b/w normal fn and arrow fn
+-->
+<!--
+    arrow fn is usedd to create instance 
+    in arrow fn
+    the perfermance aroow fn is bettter than the normal fn
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style> 
+
+    </style>
+  </head>
+<!-- <body>
+    <script>
+        let a = 100;
+        let b = 200;
+
+        // 1. Without parameter
+        function add() {
+          console.log("Add:", a + b);
+        }
+        add();
+
+        // 1.1 Without parameter
+        add();
+        function add() {
+          console.log("Add:", a + b);
+        }
+
+        // 2. With parameters
+        function sub(x, y) {
+          console.log("Sub:", x - y);
+        }
+        sub(a, b);
+
+        // 3. Local variable
+        function localVarExample() {
+          let c = a * b;
+          console.log("Mul (Local Var):", c);
+        }
+        localVarExample();
+
+        // 4. Global variable
+        let globalResult;
+        function globalVarExample() {
+          globalResult = a / b;
+          console.log("Global Result:", globalResult);
+        }
+        globalVarExample();
+
+        // 5. Passing value
+        function greet(name) {
+          console.log("Hello", name);
+        }
+        greet("John");
+
+        // 5.1 Pasiing value externally
+        function greet(name) {
+          console.log("Hello", name);
+        }
+        let name = prompt("Enter your name:");
+        greet(name);
+
+        // 7. Returning function -> is used to acces the value which is inside the scope to be accessed globally
+        function getName() {
+          return "JavaScript";
+        }
+        let result = getName();
+        console.log("Returned:", result);
+
+        // 8.0 Returning arrow function
+        let addition = () => {
+          let c = a + b;
+          return(c)
+        }
+        let res = addition();
+        console.log("Addition",res);
+
+        // 8. Returning arrow function
+        const getLang = () => "JS";
+        console.log("Returned Arrow:", getLang());
+
+        // 6. Arrow function -> it can not be called before the implementation of the fn as compared to normal fn
+        let square = (x,y) => {
+          return x * y;
+        };
+        console.log("Square:", square(5,4));
+
+        let wedding = (x,y) => {
+          console.log(`${x} love to be ${y}`)
+        };
+        wedding("i","alone");
+
+
+
+        // New concept
+        let arr = ["one", "two", "three", "four", "five"];
+
+        for (let i = 0; i < arr.length; i++) {
+          console.log(arr[i]);
+        }
+
+        console.log("\n");
+
+        for (let ele in arr) {
+          console.log(arr[ele]);
+        }
+
+        console.log("\n");
+
+        arr.forEach((value, index, array) => {
+          console.log(value, index, array);
+        });
+
+        console.log("\n");
+
+        arr.map((e,i,a)=>{
+          console.log(e,i,a)
+        });
+
+
+      let employees = [
+        {
+            id : 101,
+            name : "one",
+            adress : "ABC",
+            lang : ["hindi","english","kannada"]
+        },
+        {
+            id : 102,
+            name : "two",
+            adress : "DEF",
+            lang : ["hindi","english","kannada","telgu"]
+        },
+        {
+            id : 103,
+            name : "three",
+            adress : "GHI",
+            lang : ["hindi","english"]
+        },
+        {
+            id : 104,
+            name : "four",
+            adress : "JKL",
+            lang : ["hindi","kannada"]
+        },
+        {
+            id : 105,
+            name : "five",
+            adress : "MNO",
+            lang : ["english","kannada"]
+        }]; 
+
+        employees.map((e)=>{
+            console.log(e);
+        });
+
+        employees.map((e)=>{
+            console.log(e.lang);
+        });
+    </script>
+  </body> -->
+
+  <!-- <body>
+    <h1 id="header1" class="header101">Hello this me priyanshu </h1>
+    <h1 id="header2">How about you </h1>
+    <script>
+        let one = document.getElementById("header1");
+        let two = document.getElementsByClassName("header101");
+        console.log(two);
+        console.log(one);
+        console.log(one.id)
+        console.log(one.id="header100")
+
+    </script>
+  </body> -->
+
+<!-- <body>
+    <h1 id="one">Hey there...!</h1>
+    <script>
+        let one = document.getElementById("one");
+        // console.log(one);
+        one.innerText = "one";  //to manipulate multiple 
+        one.style.color = "red";
+        one.style.textAlign = "center";
+        one.style.fontFamily = "Arial, sans-serif"
+        one.style.textTransform = "uppercase";
+        one.style.fontSize = "75px";
+    </script>
+  </body> -->
+
+<!-- <body id="body">
+  <div id="header">My Portfolio</div>
+
+  <div id="portfolio">
+    <div id="portfolio-text">
+      <h1 id="header2">Priyanshu D Patel</h1>
+      <p id="header3">
+        Hello! I'm a passionate developer learning full stack development. I enjoy
+        creating clean and functional websites. I'm currently learning Java and
+        web development at Dhee Coding Lab.
+      </p>
+      <div id="buttons">
+            <button id="btn1">Resume</button>
+            <button id="btn2">Feedback</button>
+      </div>
+      <br><br><br>
+      <div>
+          <button id="red">Red</button>
+          <button id="green">Green</button>
+          <button id="blue">Blue</button>
+          <button id="normal">Normal</button>
+      </div>
+    </div>
+
+    <div class="portfolio-image">
+      <img src="priya.png" alt="Your Photo"/>
+    </div>
+  </div>
+
+  <script>
+    let header = document.getElementById("header");
+    header.style.color = "crimson";
+    header.style.textAlign = "center";
+    header.style.fontFamily = "comic sans ms";
+    header.style.textTransform = "uppercase";
+    header.style.fontSize = "50px";
+
+    let portfolio = document.getElementById("portfolio");
+    portfolio.style.display = "flex";
+    portfolio.style.alignItems = "center";
+    portfolio.style.padding = "50px";
+    portfolio.style.backgroundColor = "burlywood";
+    portfolio.style.maxWidth = "1000px";
+    portfolio.style.margin = "30px auto";
+    portfolio.style.borderRadius = "8px"
+
+    let portfolioText = document.getElementById("portfolio-text");
+    portfolioText.style.flex = "1";
+    portfolioText.style.backgroundColor = "burlywood";
+    portfolioText.style.fontFamily = "comic sans ms";
+
+    let header2 = document.getElementById("header2");
+    header2.style.fontSize = "2em";
+    header2.style.marginBottom = "20px";
+
+    let header3 = document.getElementById("header3");
+    header3.style.fontSize = "1.2em";
+    header3.style.lineHeight = "1.6";
+    header3.style.padding = "20px";
+
+    let portfolioImage = document.getElementsByClassName("portfolio-image")[0];
+    portfolioImage.style.flex = "1";
+    portfolioImage.style.textAlign = "right";
+
+    let image = portfolioImage.getElementsByTagName("img")[0];
+    image.style.maxWidth = "100%";
+    image.style.borderRadius = "8px";
+
+    let body = document.getElementById("body");
+    body.style.backgroundColor = "bisque";
+
+    let button1 = document.getElementById("btn1");
+    button1.style.fontSize = "15px";
+    button1.style.borderRadius = "10px";
+    button1.style.backgroundColor = "brown";
+    button1.style.color = "darkbrown";
+
+    let button2 = document.getElementById("btn2");
+    button2.style.fontSize = "15px";
+    button2.style.borderRadius = "10px";
+    button2.style.backgroundColor = "brown";
+    button2.style.color = "darkbrown";
+
+    let btn1 = document.getElementById("btn1");
+    btn1.addEventListener("click",()=>{
+      console.log("You have clicked me");
+      btn1.style.backgroundColor = "red";
+    });
+    
+    let btn2 = document.getElementById("btn2");
+    btn1.addEventListener("click",()=>{
+      console.log("You have clicked me");
+      btn2.style.backgroundColor = "red";
+    });
+
+    let red = document.getElementById("red");
+    red.addEventListener("click",()=>{
+      body.style.backgroundColor = "red";
+      red.style.borderRadius = "10px";
+      red.style.backgroundColor = "red";
+    });
+
+    let green = document.getElementById("green");
+    green.addEventListener("click",()=>{
+      body.style.backgroundColor = "green";
+      green.style.borderRadius = "10px";
+      green.style.backgroundColor = "green";
+    });
+
+    let blue = document.getElementById("blue");
+    blue.addEventListener("click",()=>{
+      body.style.backgroundColor = "blue";
+      blue.style.borderRadius = "10px";
+      blue.style.backgroundColor = "blue";
+    });
+    let normal = document.getElementById("normal");
+    normal.addEventListener("click",()=>{
+      body.style.backgroundColor = "bisque";
+      normal.style.borderRadius = "10px";
+      normal.style.backgroundColor = "bisque";
+    });
+  </script>
+</body> -->
+
+<!-- <body>
+  <input type="text" name="" id="first_name" placeholder="Enter first name: ">
+  <input type="text" name="" id="last_name" placeholder="Enter last name: ">
+  <button id="btn">Submit</button>
+  <h1>Hello all my name is <span id="fn"></span> <span id="ln"></span></h1>
+  <script>
+    let btn = document.getElementById("btn");
+    let first_name = document.getElementById("first_name");
+    let last_name = document.getElementById("last_name");
+    let fn = document.getElementById("fn");
+    let ln = document.getElementById("ln");
+    btn.addEventListener("click",()=>{
+      fn.innerText = first_name.value
+      ln.innerText = last_name.value
+    });
+  </script>
+</body> -->
+
+<!-- <body>
+  <script>
+    let person = [
+      {
+      name : "Priyanshu",
+      age : 23,
+      loc : "Bangalore",
+      hobbies : ["play","dancing","cycling","running","sleepng","walking","eating"]
+    },
+    {
+      name : "Sudhanshu",
+      age : 19,
+      loc : "Mangalore",
+      hobbies : ["play","dancing","cycling","running","sleepng","walking","eating"]
+    }
+  ];
+    console.log(`Hey there i am ${person[0].name} and i am of age ${person[0].age} and i live in ${person[0].loc} and love to ${person[0].hobbies[0]}`);
+
+    let fruits = ["apple","mango","banana","grapes","pineapple"];
+    for(let i=0; i<fruits.length; i++)
+    {
+        console.log(fruits[i]);
+    }
+
+    fruits.forEach((values,index,array)=>{
+      console.log(values,index,array)
+    })
+
+    person.map((elements)=>{
+      console.log(elements.loc)
+    })
+  </script>
+</body> -->
+
+<!-- <body>
+  <h1 id="header1">Hello there...!</h1>
+    <h1 id="header2">Lucifer</h1>
+    <p id="para1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam accusantium, quos aliquid laborum obcaecati iusto!</p>
+    <li class="fruits">mango</li>
+    <li class="fruits">banana</li>
+    <li class="fruits">grapes</li>
+    <li class="fruits">orange</li>
+    <li class="fruits">apple</li>
+
+  <script>
+      console.log(document.head) 
+      console.log(document.body)
+      console.log(document.title = "New Change")
+
+      let header1 = document.getElementById("header1")
+      console.log(header1)
+
+      let header2 = document.getElementById("header2")
+      console.log(header2.innerText)
+
+      let para1 = document.getElementById("para1")
+      console.log(para1.innerText)
+      para1.innerText = "This is me luci from Dhee Coding Lab , Nice meeting you lets hangout elsewhere"
+      console.log(para1.innerText)
+  </script>
+</body> -->
+
+<!-- <body>
+    <div class="container">
+      <li class="hrs">00 hrs</li>
+      <li>:</li>
+      <li class="min">00 min</li>
+      <li>:</li>
+      <li class="sec">00 sec</li>
+    </div>
+    <script>
+      setInterval(()=>{
+      let body = document.body;
+      body.style.display = "flex";
+      body.style.justifyContent = "center";
+      body.style.height = "100vh";
+      body.style.alignItems = "center";
+
+      let container = document.getElementsByClassName("container")[0];
+      console.log(container);
+      container.style.listStyle = "none";
+      container.style.display = "flex";
+      container.style.gap = "50px";
+      container.style.fontSize = "50px";
+
+      let hrs = document.getElementsByClassName("hrs")[0];
+      let min = document.getElementsByClassName("min")[0];
+      let sec = document.getElementsByClassName("sec")[0];
+
+      hrs.style.color = "red";
+      min.style.color = "green";
+      sec.style.color = "blue";
+
+      let date = new Date();
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+      let seconds = date.getSeconds();
+
+      hrs.innerHTML = hours;
+      min.innerHTML = minutes;
+      sec.innerHTML = seconds;
+
+      },1000);
+    </script>
+  </body> -->
+
+<body>
+  <!-- <button class="btn" id="btn1">blue</button>
+  <button class="btn" id="btn2">red</button>
+  <button class="btn" id="btn3">green</button>
+  <button class="btn" id="btn4">orange</button> -->
+
+  <!-- <script>
+    // let blue = document.addEventListener("btn1")
+    // let red = document.addEventListener("btn2")
+    // let green = document.addEventListener("btn3")
+    // let orange = document.addEventListener("btn4")
+
+    // blue.addEventListener("click",()=>{
+    //   console.log("hello this is blue")
+    // })
+
+    // let blue = document.getElementById("btn1");
+    // let red = document.getElementById("btn2");
+    // let green = document.getElementById("btn3");
+    // let orange = document.getElementById("btn4");
+    let body = document.getElementById("body");
+
+    let blue = document.getElementsByClassName("btn")[0]
+    let red = document.getElementsByClassName("btn")[1]
+    let green = document.getElementsByClassName("btn")[2]
+    let orange = document.getElementsByClassName("btn")[3]
+    // console.log(blue)
+
+    blue.addEventListener("click",()=>{
+      console.log("hello this is blue")
+      body.style.background = "blue"
+    })
+
+    red.addEventListener("click",()=>{
+      console.log("hello this is blue")
+      body.style.background = "blue"
+    })
+
+    or.addEventListener("mouseup",()=>{
+      console.log("the mouse is down")
+    })
+
+    or.addEventListener("mous",()=>{
+      console.log("hey ur on orange button")
+    })
+  </script>
+</body> -->
+
+<!-- <body>
+  <div class="container">
+    <input type="text" name="" id="first_name" placeholder="Enter First Name: ">
+    <input type="text" name="" id="last_name" placeholder="Enter Last Name: ">
+    <input type="text" name="" id="contact" placeholder="Enter contact: ">
+    <button id="submit">Submit</button>
+
+    <h1>Hello my name is <span id="first_name"></span><span id="last_name"></span>and contact number is <span id="contact"></span> </h1>
+  </div>
+  <script>
+
+    let first_name = document.getElementById("first_name")
+    let last_name = document.getElementById("last_name")
+    let contact = document.getElementById("contact")
+
+    let submit = document.getElementById("submit")
+    // console.log(submit)
+    // submit.addEventListener("click",()=>{
+    //   console.log("hey u clicked on submit btn")
+    // })
+
+    let first_name = document.getElementById("first_name")
+    // console.log(first_name.ariaPlaceholder)
+    console.log(first_name.value)
+
+    let last_name = document.getElementById("last_name")
+    // console.log(first_name.ariaPlaceholder)
+    console.log(last_name.value)
+
+    let contact = document.getElementById("contact")
+    console.log(contact.value)
+
+    submit.addEventListener("click",()=>{
+      if(first_name.value.length)
+    })
+  </script>
+</body> -->
+
+ <body> <!--1001 -->
+  <div class="container">
+    <h1>Qr Code Generator</h1>
+    <div class="'card">
+      <input type="text" name="" id=""
+      placeholder="Enter item : ">
+      <button>Submit</button>
+      <img src="" alt="Loading...">
+    </div>
+  </div>
+</body>
+  </html>

@@ -1,0 +1,102 @@
+<!-- 
+* fetch (is promise) -> is a method which is used to  fetch / collect the data.
+* if u r hitting proper url, ur promise is fullfilled
+* after itting url , we are waitng for response(it will be in pending state)
+* if i recive the response then promise is fullfilled , if not recieved te response due to some techical error , then pomise is rejected
+
+**d/f
+
+*async and await (v.imp)(lovers)
+async shld always 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0%;
+        margin: 0%;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .card {
+        border: 1px solid red;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .card img {
+        width: 300px;
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .card h1 {
+        font-size: 18px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <!-- <body>
+    <script>
+        let data=fetch("https://fakestoreapi.com/products").then((items)=>{
+            return(items.json())
+        }).then((item)=>{
+            console.log(item)
+        })
+        // console.log(data);
+    </script>
+</body> -->
+
+  <body>
+    <div class="container"></div>
+
+    <script>
+      let container = document.getElementsByClassName("container")[0];
+
+      let data = fetch("https://fakestoreapi.com/products").then((items)=>{
+          return items.json();
+      })
+      .then((items)=>{
+          items.forEach((item)=>{
+          container.innerHTML += `<div class="card">
+          <p>${item.id}</p>
+          <img src="${item.image}" alt="${item.title}">
+          <p>${item.title}</p>
+          <p>${item.description}</p>
+          <p>${item.category}</p>
+          <p>${item.price}</p>`
+          }); 
+      });
+    </script>
+  </body>
+
+//   <body>
+//     <script>
+//         let fetching = async() =>{
+//             let datas = await fetch("https://fakestoreapi.com/products")
+//             let data = await datas.json()
+//             data.map((items)=>{
+//                 console.log(items)
+//             })}
+//             fetching();
+//     </script>
+// </body>
+</html>
